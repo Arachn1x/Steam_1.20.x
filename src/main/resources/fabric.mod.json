@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "steam",
+	"version": "${version}",
+	"name": "Steam",
+	"description": "This is a mod that adds an assortment of steampunk items!",
+	"authors": [
+		"Arachn1x"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/steam/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.arachn1x.steam.Steam"
+		],
+		"client": [
+			"net.arachn1x.steam.SteamClient"
+		],
+		"fabric-datagen": [
+			"net.arachn1x.steam.SteamDataGenerator"
+		]
+	},
+	"mixins": [
+		"steam.mixins.json",
+		{
+			"config": "steam.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
